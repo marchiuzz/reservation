@@ -14,5 +14,10 @@
         }
     },
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+
+    },
+    "require-dev": {
+        "kint-php/kint": "^3.2"
+    }
 }
