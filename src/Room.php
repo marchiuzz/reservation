@@ -16,7 +16,7 @@ class Room implements ReservableInterface
 
     public function __toString(): string
     {
-        return "Room <strong>" . $this->roomNumber . "</strong>";
+        return "<strong>" . $this->roomNumber . "</strong>";
     }
 
     public function addReservation(Reservation $reservation): void
@@ -26,7 +26,6 @@ class Room implements ReservableInterface
         } else {
             $this->reservations[] = $reservation;
         }
-
     }
 
     public function removeReservation(Reservation $reservation): void
