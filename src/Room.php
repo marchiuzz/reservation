@@ -14,19 +14,23 @@ class Room implements ReservableInterface
     private $price;
     private $reservations = [];
 
+    public function __toString(): string
+    {
+        return "Room <strong>" . $this->roomNumber . "</strong>";
+    }
+
     public function addReservation(Reservation $reservation): void
     {
-        $this->reservations[] = $reservation;
+        if(!(BookManager::checkIfRoomIsAvailable($this->getReservations(), $reservation))){
+            throw new ReservationException('Room is not valid for that period of time');
+        } else {
+            $this->reservations[] = $reservation;
+        }
+
     }
 
     public function removeReservation(Reservation $reservation): void
     {
-        $this->reservations = \array_diff($this->reservations, ["a", "c"]);
-    }
-
-    public function __toString(): string
-    {
-        return "Room <strong>" . $this->roomNumber . "</strong>";
     }
 
     /**
@@ -121,5 +125,6 @@ class Room implements ReservableInterface
     {
         $this->extras = $extras;
     }
+
 
 }

@@ -20,7 +20,19 @@ $guest = new Guest("Jonas", "Jonauskas");
 $startDate = new \DateTime('2019-05-20');
 $endDate = new \DateTime('2019-06-25');
 $reservation = new Reservation($startDate, $endDate, $guest);
-
 BookManager::bookRoom($room, $reservation);
 
-d($room->getReservations());
+$guest = new Guest("Petriukas", "Petrauskelis");
+$startDate = new \DateTime('2019-06-26');
+$endDate = new \DateTime('2019-07-20');
+$reservation = new Reservation($startDate, $endDate, $guest);
+BookManager::bookRoom($room, $reservation);
+
+$guest = new Guest("Petriukas", "Petrauskelis");
+$startDate = new \DateTime('2019-07-20');
+$endDate = new \DateTime('2019-08-25');
+$reservation = new Reservation($startDate, $endDate, $guest);
+BookManager::bookRoom($room, $reservation);
+
+
+
