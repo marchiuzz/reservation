@@ -6,6 +6,10 @@ namespace Reservation\Rooms;
 
 use Reservation\Room;
 
+/**
+ * Class Apartment
+ * @package Reservation\Rooms
+ */
 class Apartment extends Room
 {
     private const roomType = "Diamond room";
@@ -15,6 +19,11 @@ class Apartment extends Room
     private const extras = "TV, air-conditioner, refrigerator,
 kitchen box, mini-bar, bathtub, free Wi-fi";
 
+    /**
+     * Apartment constructor.
+     * @param int $roomNumber
+     * @param int $price
+     */
     public function __construct(int $roomNumber, int $price)
     {
         $this->setRoomNumber($roomNumber);

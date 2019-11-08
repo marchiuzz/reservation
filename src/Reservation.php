@@ -3,13 +3,32 @@ declare(strict_types=1);
 
 namespace Reservation;
 
+/**
+ * Class Reservation
+ * @package Reservation
+ */
 class Reservation
 {
+    /**
+     * @var \DateTime
+     */
     private $startDate;
+    /**
+     * @var \DateTime
+     */
     private $endDate;
+    /**
+     * @var Guest
+     */
     private $guest;
 
 
+    /**
+     * Reservation constructor.
+     * @param \DateTime $startDate
+     * @param \DateTime $endDate
+     * @param Guest $guest
+     */
     public function __construct(\DateTime $startDate, \DateTime $endDate, Guest $guest)
     {
         $this->startDate = $startDate;
@@ -17,6 +36,9 @@ class Reservation
         $this->guest = $guest;
     }
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         $startTimeString = $this->startDate->format('Y-m-d');
@@ -71,12 +93,5 @@ class Reservation
     {
         $this->guest = $guest;
     }
-
-
-
-
-
-
-
 
 }

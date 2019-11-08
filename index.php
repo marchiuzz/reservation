@@ -16,6 +16,3 @@ $endDate = new \DateTime('2019-04-25');
 $reservation = new Reservation($startDate, $endDate, $guest);
 
 BookManager::bookRoom($room, $reservation);
-
-
-

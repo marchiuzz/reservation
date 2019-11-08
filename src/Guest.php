@@ -3,18 +3,35 @@ declare(strict_types=1);
 
 namespace Reservation;
 
-
+/**
+ * Class Guest
+ * @package Reservation
+ */
 class Guest
 {
+    /**
+     * @var string
+     */
     private $firstName;
+    /**
+     * @var string
+     */
     private $lastName;
 
+    /**
+     * Guest constructor.
+     * @param string $firstName
+     * @param string $lastName
+     */
     public function __construct(string $firstName, string $lastName)
     {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         return "<strong>".$this->firstName." ".$this->lastName."</strong>";
@@ -51,6 +68,5 @@ class Guest
     {
         $this->lastName = $lastName;
     }
-
 
 }
